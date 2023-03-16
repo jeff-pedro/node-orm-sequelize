@@ -1,59 +1,67 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Pessoas', [{
-      nome: 'Ana Souza',
+      nome: 'Sabrina Spellman',
       ativo: true,
-      email: 'ana@ana.com',
+      email: 'sabrina@magic.edu',
       role: 'estudante',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Marcos Cintra',
+      nome: 'Hermione Granger',
       ativo: true,
-      email: 'marcos@marcos.com',
+      email: 'hermione@magic.edu',
       role: 'estudante',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Felipe Cardoso',
+      nome: 'Wanda Maximoff',
       ativo: true,
-      email: 'felipe@felipe.com',
+      email: 'wanda@magic.edu',
       role: 'estudante',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Sandra Gomes',
+      nome: 'Nimue',
       ativo: false,
-      email: 'sandra@sandra.com',
+      email: 'nimue@magic.edu',
       role: 'estudante',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Paula Morais',
+      nome: 'Zatanna Zatara',
       ativo: true,
-      email: 'paula@paula.com',
+      email: 'zatanna@magic.edu',
       role: 'docente',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      nome: 'Sergio Lopes',
+      nome: 'Agatha Harkness',
       ativo: true,
-      email: 'sergio@sergio.com',
+      email: 'agatha@magic.edu',
       role: 'docente',
       createdAt: new Date(),
       updatedAt: new Date()
-    }], {});
+    },
+    {
+      nome: 'Baba Yaga',
+      ativo: true,
+      email: 'baba@magic.edu',
+      role: 'docente',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }], {})
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Pessoas', null, {});
+    await queryInterface.bulkDelete('Pessoas', null, {})
   }
-};
+}
