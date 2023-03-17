@@ -24,9 +24,9 @@ npm install
 Para configurar o acesso ao banco de dados pelo Sequelize, altere o parâmentros contidos no arquivo `./api/config/config.json`, conforme o exemplo abaixo:
 ```
 "development": {
-    "username": "usuario123",
-    "password": "senha123",
-    "database": "escola_ingles",
+    "username": "seu-usuario",
+    "password": "sua-senha",
+    "database": "escola_magia",
     "host": "127.0.0.1",
     "dialect": "mysql"
 }
@@ -56,4 +56,4 @@ npm start
 [em breve]
 
 ## Documentação
-[em breve]
+- [documentação da api](https://documenter.getpostman.com/view/22093498/2s93Jxs2S6)
