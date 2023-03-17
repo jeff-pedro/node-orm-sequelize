@@ -21,9 +21,9 @@ class PessoaController {
   }
 
   static async pegaUmaPessoa(req, res) {
-    const { estudanteId } = req.params
+    const { id } = req.params
     try {
-      const umaPessoa = await pessoasServices.pegaUmRegistro({ id: Number(estudanteId) })
+      const umaPessoa = await pessoasServices.pegaUmRegistro({ id: Number(id) })
       return res.status(200).json(umaPessoa)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -41,11 +41,11 @@ class PessoaController {
   }
 
   static async atualizaPessoa(req, res) {
-    const { estudanteId } = req.params
+    const { id } = req.params
     const novasInfos = req.body
     try {
-      await pessoasServices.atualizaRegistro(novasInfos, Number(estudanteId))
-      const pessoaAtualizada = await pessoasServices.pegaUmRegistro({ id: Number(estudanteId) })
+      await pessoasServices.atualizaRegistro(novasInfos, Number(id))
+      const pessoaAtualizada = await pessoasServices.pegaUmRegistro({ id: Number(id) })
       return res.status(200).json(pessoaAtualizada)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -53,30 +53,30 @@ class PessoaController {
   }
 
   static async apagaPessoa(req, res) {
-    const { estudanteId } = req.params
+    const { id } = req.params
     try {
-      await pessoasServices.apagaRegistro(Number(estudanteId))
-      return res.status(200).json({ mensagem: `id ${estudanteId} deletado` })
+      await pessoasServices.apagaRegistro(Number(id))
+      return res.status(200).json({ mensagem: `id ${id} deletado` })
     } catch (error) {
       return res.status(500).json(error.message)
     }
   }
 
   static async restauraPessoa(req, res) {
-    const { estudanteId } = req.params
+    const { id } = req.params
     try {
-      await pessoasServices.restauraRegistro(Number(estudanteId))
-      return res.status(200).json({ mensagem: `id ${estudanteId} restaurado` })
+      await pessoasServices.restauraRegistro(Number(id))
+      return res.status(200).json({ mensagem: `id ${id} restaurado` })
     } catch (error) {
       return res.status(500).json(error.message)
     }
   }
 
   static async cancelaPessoa(req, res) {
-    const { estudanteId } = req.params
+    const { id } = req.params
     try {
-      await pessoasServices.cancelaPessoasEMatriculas(Number(estudanteId))
-      return res.status(200).json({ mensagem: `matriculas ref. estudante ${estudanteId} canceladas` })
+      await pessoasServices.cancelaPessoasEMatriculas(Number(id))
+      return res.status(200).json({ mensagem: `matriculas ref. estudante ${id} canceladas` })
     } catch (error) {
       return res.status(500).json(error.message)
     }
