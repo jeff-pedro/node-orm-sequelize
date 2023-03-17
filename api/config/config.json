@@ -2,7 +2,7 @@
   "development": {
     "username": "admin",
     "password": "c@i9evYWimf",
-    "database": "escola_ingles",
+    "database": "escola_magia",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
