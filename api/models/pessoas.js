@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 const {
   Model
-} = require('sequelize');
+} = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Pessoas extends Model {
     /**
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         funcaoValidadora: function(dado) {
-          if (dado.length < 3) throw new Error("o campo 'nome' deve ter mais de 3 caracteres")
+          if (dado.length < 3) throw new Error('o campo "nome" deve ter mais de 3 caracteres')
         }
       }
     },
@@ -50,6 +50,6 @@ module.exports = (sequelize, DataTypes) => {
     scopes: {
       todos: { where: {} }
     }
-  });
-  return Pessoas;
-};
+  })
+  return Pessoas
+}
