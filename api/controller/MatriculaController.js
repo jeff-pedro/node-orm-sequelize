@@ -4,17 +4,6 @@ const { Sequelize } = require('sequelize')
 
 class MatriculaController {
 
-  static async pegaMatriculas(req, res) {
-    const { estudanteId } = req.params
-    try {
-      const matriculas = await matriculasServices.pegaTodosOsRegistros({ estudante_id: estudanteId })
-      return res.status(200).json(matriculas)
-    } catch (error) {
-      console.log(error)
-      return res.status(500).json(error.mensagem)
-    }
-  }
-
   static async pegaUmaMatricula(req, res) {
     const { estudanteId, matriculaId } = req.params
     try {
